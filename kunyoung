@@ -1,0 +1,10 @@
+X = train.drop(columns='credit', axis=1)
+y = train['credit']
+X_test = test.copy()
+
+from sklearn.model_selection import train_test_split
+
+X_train, X_val, y_train, y_val = train_test_split(X, y, stratify=y, random_state=42)
+X_train.shape, X_val.shape, y_train.shape, y_val.shape
+
+이렇게 나눠봤는데 잘못나눈거 같아요.. 혹시 다른 분들은 어떻게 나누셨을까요??
